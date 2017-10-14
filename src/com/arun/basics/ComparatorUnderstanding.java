@@ -1,6 +1,7 @@
 package com.arun.basics;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -10,22 +11,49 @@ import java.util.List;
 public class ComparatorUnderstanding {
     public static void main(String[] args) {
 
+
         List<Fruit> lstFruits = new ArrayList<>();
         lstFruits.add(new Fruit("Apple", "Red", "A"));
         lstFruits.add(new Fruit("Orange", "Orange", "C"));
         lstFruits.add(new Fruit("Banana", "Yellow", "D"));
 
+        lstFruits = sortingPriorJava8ByName(lstFruits);
         System.out.println(lstFruits);
+
+        lstFruits = sortingPriorJava8ByColor(lstFruits);
+        System.out.println(lstFruits);
+
+        //Java 8 way
         lstFruits.sort(Comparator.comparing(Fruit::getName));
         System.out.println(lstFruits);
 
         lstFruits.sort(Comparator.comparing(Fruit::getColor));
         System.out.println(lstFruits);
-
     }
 
-}
 
+    public static List<Fruit> sortingPriorJava8ByName(List<Fruit> fruits) {
+        //Prior Java 8 way of sorting an Object
+        Collections.sort(fruits, new Comparator<Fruit>() {
+            @Override
+            public int compare(Fruit o1, Fruit o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        return fruits;
+    }
+
+    public static List<Fruit> sortingPriorJava8ByColor(List<Fruit> fruits){
+        //prior Java 8 way of Sorting an object
+        Collections.sort(fruits, new Comparator<Fruit>() {
+            @Override
+            public int compare(Fruit o1, Fruit o2) {
+                return o1.getColor().compareTo(o2.getColor());
+            }
+        });
+        return fruits;
+    }
+}
 
 class Fruit {
     private String name;
