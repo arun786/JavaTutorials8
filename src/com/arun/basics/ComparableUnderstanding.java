@@ -73,14 +73,5 @@ class Animals implements Comparable<Animals>{
         return this.getName().compareTo(o.getName());
     }
 
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("Animals{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", color='").append(color).append('\'');
-        sb.append(", type='").append(type).append('\'');
-        sb.append(", age=").append(age);
-        sb.append('}');
-        return sb.toString();
-    }
+
 }
