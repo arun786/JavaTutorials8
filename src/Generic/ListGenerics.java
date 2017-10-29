@@ -16,7 +16,7 @@ public class ListGenerics {
     }
 
     private static void printDoubledValue(List<Integer> lsts) {
-        for (Integer lst : lsts) {
+        for (int lst : lsts) {
             System.out.println(lst * 2);
         }
     }
