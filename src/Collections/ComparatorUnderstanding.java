@@ -1,4 +1,4 @@
-package com.arun.basics;
+package Collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
