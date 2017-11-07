@@ -3,10 +3,10 @@ package BehaviourParameterization;
 public class Apple {
 
     private String color;
-    private String weigh;
+    private Integer weigh;
     private String origin;
 
-    public Apple(String color, String weigh, String origin) {
+    public Apple(String color, Integer weigh, String origin) {
         this.color = color;
         this.weigh = weigh;
         this.origin = origin;
@@ -16,7 +16,7 @@ public class Apple {
         return color;
     }
 
-    public String getWeigh() {
+    public Integer getWeigh() {
         return weigh;
     }
 
